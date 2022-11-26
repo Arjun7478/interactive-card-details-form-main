@@ -1,0 +1,227 @@
+$White: hsl(0, 0%, 100%);
+$Light-grayish-violet: hsl(270, 3%, 87%);
+$Dark-grayish-violet: hsl(279, 6%, 55%);
+$Very-dark-violet: hsl(278, 66%, 14%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Space Grotesk", sans-serif;
+}
+.main {
+    max-width: 1300px;
+    height: 100vh;
+    display: flex;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+.item-1 {
+    position: relative;
+}
+.background__img {
+    max-width: 450px;
+    width: 100%;
+    height: 100%;
+
+    @media (min-width: 768px) {
+        max-width: 430px;
+    }
+}
+.card {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    right: 0;
+    display: flex;
+    flex-direction: column-reverse;
+
+    ///for desktop
+    @media (min-width: 768px) {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        transform: translate(47%);
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+.card-front {
+    position: relative;
+
+    margin-bottom: 10px;
+    color: white;
+    z-index: 200;
+    transform: translateY(-43%);
+
+    //for mobile
+    @media (max-width: 768px) {
+        display: flex;
+        align-self: flex-start;
+    }
+
+    // for desktop
+    @media (min-width: 768px) {
+        transform: translate(-30%);
+    }
+
+    &__img {
+        max-width: 396px;
+        max-height: 212px;
+
+        @media (max-width: 768px) {
+            max-width: 285px;
+            max-height: 155px;
+        }
+    }
+
+    &__details {
+        position: absolute;
+        padding: 15px;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media (min-width: 768px) {
+            padding: 25px;
+        }
+    }
+
+    &__logo {
+        width: fit-content;
+    }
+
+    &__number {
+        font-size: 20px;
+        letter-spacing: 1.5px;
+
+        @media (min-width: 768px) {
+            font-size: 27px;
+            letter-spacing: 1.9px;
+        }
+    }
+}
+.card-back {
+    position: relative;
+    margin-top: 10px;
+    z-index: 100;
+
+    @media (max-width: 768px) {
+        right: 30px;
+        display: flex;
+        align-self: flex-end;
+    }
+    &__img {
+        max-width: 285px;
+        max-height: 155px;
+
+        @media (min-width: 768px) {
+            max-width: 396px;
+            max-height: 212px;
+        }
+    }
+    &__cvc-number {
+        position: absolute;
+        top: 42.5%;
+        right: 50px;
+        color: white;
+        @media (min-width: 768px) {
+            top: 44%;
+        }
+    }
+}
+
+.card-details {
+    margin-inline: auto;
+    display: flex;
+
+    @media (max-width: 768px) {
+        margin-top: 30px;
+    }
+}
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    flex-direction: column;
+    padding: 20px;
+    text-transform: uppercase;
+}
+.cardholder-name {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(110, 100, 100);
+}
+.card-number {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(110, 100, 100);
+}
+
+.expiry-date {
+    display: block;
+    padding-block: 10px;
+}
+
+.expiry-mm {
+    padding: 10px;
+    width: 75px;
+    border-radius: 5px;
+    border: 1px solid rgb(110, 100, 100);
+    margin-right: 4px;
+}
+
+.expiry-yy {
+    padding: 10px;
+    width: 75px;
+    border-radius: 5px;
+    border: 1px solid rgb(110, 100, 100);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pad-b {
+    padding-block: 10px;
+}
+.pad-10 {
+    padding: 5px;
+    padding-right: 0;
+}
+.cvc {
+    display: block;
+    padding: 10px;
+}
+.cvc-inp {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(110, 100, 100);
+}
+.confirm-btn {
+    font-family: "Space Grotesk", sans-serif;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(110, 100, 100);
+    background-color: $Very-dark-violet;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        background-color: hsl(279, 47%, 24%);
+    }
+}
+.thank-you {
+    display: none;
+}
